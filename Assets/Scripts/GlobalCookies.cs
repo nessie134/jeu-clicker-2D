@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class GlobalCookies : MonoBehaviour
 {
     public static int cookieCount;
-    private int internalCookies;
     private TextMeshProUGUI _argent;
 
     private void Start()
@@ -17,7 +16,7 @@ public class GlobalCookies : MonoBehaviour
 
     public void Update()
     {
-        internalCookies = cookieCount;
-        _argent.text = "Argent " + internalCookies + "$";
+        
+        _argent.text = "Argent " + cookieCount + "$";
     }
 }

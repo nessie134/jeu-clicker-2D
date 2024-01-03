@@ -4,26 +4,17 @@ using UnityEngine;
 
 public class AutoLeaf : MonoBehaviour
 {
-
-    public bool CreatingCookie = false;
-    public static int CookieIncrease = 1;
-    public int InternalIncrease;
-
-    // Update is called once per frame
-    void Update()
+    public static int nbEmployees;
+    private void Start()
     {
-        InternalIncrease = CookieIncrease;
-        if (CreatingCookie == false)
-        {
-            CreatingCookie = true;
-            StartCoroutine(CreateTheCookie());
-        }
-        
+        StartCoroutine(CreateTheCookie());
     }
     IEnumerator CreateTheCookie()
     {
-        GlobalCookies.cookieCount += InternalIncrease;
-        yield return new WaitForSeconds(1);
-        CreatingCookie = false;
+        while (true)
+        {
+            GlobalCookies.cookieCount += nbEmployees;
+            yield return new WaitForSeconds(1);
+        }
     }
 }

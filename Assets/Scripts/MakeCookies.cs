@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class MakeCookies : MonoBehaviour
 {
-    //public GameObject textBox;
+    public int nbClicks = 1;
 
     public void ClickTheButton()
     {
-        GlobalCookies.cookieCount += 1;
+        GlobalCookies.cookieCount += nbClicks;
         Debug.Log(GlobalCookies.cookieCount);
     }
 }
