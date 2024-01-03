@@ -18,6 +18,6 @@ public class GlobalCookies : MonoBehaviour
     public void Update()
     {
         internalCookies = cookieCount;
-        _argent.text = internalCookies + "$";
+        _argent.text = "Argent " + internalCookies + "$";
     }
 }
