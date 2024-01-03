@@ -1,27 +1,34 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 
 public class GlobalEmployee : MonoBehaviour
-{
-    public GameObject fakeButton;
-    public GameObject fakeText;
-    public GameObject realButton;
-    public GameObject realText;
+{   
+    [SerializeField] private GameObject fakeButton;
+    [SerializeField] private GameObject realButton;
+    private TextMeshProUGUI realText;
+    private TextMeshProUGUI fakeText;
 
     public static int employeeValue = 10;
     public static bool turnOffButton = false;
 
     public int currentLeaves;
 
-    // Update is called once per frame
+    private void Start()
+    {
+        realText = realButton.GetComponentInChildren<TextMeshProUGUI>();
+        fakeText = fakeButton.GetComponentInChildren<TextMeshProUGUI>();
+    }
+
     void Update()
     {
         currentLeaves = GlobalCookies.cookieCount;
-        fakeButton.GetComponentInChildren<Text>().text = "Buy Employee - $ " + employeeValue;
-        realButton.GetComponentInChildren<Text>().text = "Buy Employee - $ " + employeeValue;
+        realText.text = "Buy Employee - $ " + employeeValue;
+        fakeText.text = "Buy Employee - $ " + employeeValue;
 
         if (currentLeaves >= employeeValue)
         {
