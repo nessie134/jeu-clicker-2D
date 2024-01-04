@@ -67,4 +67,10 @@ public class ciseaux : MonoBehaviour
             _button.interactable = false;
         }
     }
+
+    public void loadCiseaux()
+    {
+        PlayerPrefs.SetInt("nbAchatCiseaux", nbAchat);
+        PlayerPrefs.Save();
+    }
 }

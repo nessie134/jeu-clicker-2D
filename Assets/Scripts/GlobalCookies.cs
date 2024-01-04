@@ -16,7 +16,12 @@ public class GlobalCookies : MonoBehaviour
 
     public void Update()
     {
-        
         _argent.text = "Argent " + cookieCount + "$";
+    }
+
+    public void saveCookie()
+    {
+        PlayerPrefs.SetInt("nbCookies", cookieCount);
+        PlayerPrefs.Save();
     }
 }
