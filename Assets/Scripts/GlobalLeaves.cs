@@ -17,7 +17,7 @@ public class GlobalLeaves : MonoBehaviour
 
     public void Update()
     {
-        _argent.text = "Argent : " + leafCount + "$";
+        _argent.text = "Argent " + leafCount + "$";
     }
 
     public void saveCookie()
