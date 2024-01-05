@@ -7,7 +7,7 @@ using Button = UnityEngine.UI.Button;
 
 public class ciseaux : MonoBehaviour
 {
-    private MakeCookies _makeCookies;
+    private MakeLeaves _makeLeaves;
     [SerializeField] public int nbAchat;
     private TextMeshProUGUI _prixTexte;
     private int _prix = 10;
@@ -17,7 +17,7 @@ public class ciseaux : MonoBehaviour
     void Start()
     {
         _button = gameObject.GetComponent<Button>();
-        _makeCookies = FindObjectOfType<MakeCookies>();
+        _makeLeaves = FindObjectOfType<MakeLeaves>();
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         loadCiseaux();
     }
@@ -28,13 +28,13 @@ public class ciseaux : MonoBehaviour
         switch(nbAchat)
         {
             case 1:
-                GlobalCookies.cookieCount -= _prix;
+                GlobalLeaves.leafCount -= _prix;
                 break;
             case 2:
-                GlobalCookies.cookieCount -= _prix;
+                GlobalLeaves.leafCount -= _prix;
                 break;
             case 3:
-                GlobalCookies.cookieCount -= _prix;
+                GlobalLeaves.leafCount -= _prix;
                 _button.interactable = false;
                 break;
         }
@@ -45,19 +45,19 @@ public class ciseaux : MonoBehaviour
         switch (nbAchat)
         {
             case 1:
-                _makeCookies.nbClicks = 2;
+                _makeLeaves.nbClicks = 2;
                 _ciseaux.text = "Ciseaux en or";
                 _prix = 250;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 break;
             case 2:
-                _makeCookies.nbClicks = 10;
+                _makeLeaves.nbClicks = 10;
                 _ciseaux.text = "Ciseaux en diamant";
                 _prix = 2000;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 break;
             case 3:
-                _makeCookies.nbClicks = 100;
+                _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
                 _prix = 15000;
                 break;
@@ -66,7 +66,7 @@ public class ciseaux : MonoBehaviour
         }
         
         
-        if(GlobalCookies.cookieCount >= _prix)
+        if(GlobalLeaves.leafCount >= _prix)
         {
             _button.interactable = true;
         }
@@ -78,7 +78,8 @@ public class ciseaux : MonoBehaviour
 
     public void saveCiseaux()
     {
-        PlayerPrefs.SetInt("nbAchatCiseaux", nbAchat);
+        PlayerPrefs.SetInt("nbAchatCiseaux", nbAchat);// PlayerPrefs data is stored locally on the player's device and is not encrypted,
+                                                      // making it susceptible to easy access and manipulation
         PlayerPrefs.Save();
     }
     public void loadCiseaux()

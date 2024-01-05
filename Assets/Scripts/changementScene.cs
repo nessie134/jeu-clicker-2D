@@ -6,13 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class changementScene : MonoBehaviour
 {   
-    private GlobalCookies _globalCookies;
+    private GlobalLeaves _globalCookies;
     private ciseaux _ciseaux;
 
     
     private void Start()
     {
-        _globalCookies = FindObjectOfType<GlobalCookies>();
+        _globalCookies = FindObjectOfType<GlobalLeaves>();
         _ciseaux = FindObjectOfType<ciseaux>();
     }
     public void ChangeScene()

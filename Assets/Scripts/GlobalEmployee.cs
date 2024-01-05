@@ -26,7 +26,7 @@ public class GlobalEmployee : MonoBehaviour
 
     void Update()
     {
-        currentLeaves = GlobalCookies.cookieCount;
+        currentLeaves = GlobalLeaves.leafCount;
         realText.text = "Acheter " + employeeValue + "$";
         fakeText.text = "Acheter " + employeeValue + "$";
 

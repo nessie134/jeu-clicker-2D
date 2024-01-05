@@ -13,7 +13,7 @@ public class AutoLeaf : MonoBehaviour
     {
         while (true)
         {
-            GlobalCookies.cookieCount += nbEmployees;
+            GlobalLeaves.leafCount += nbEmployees;
             yield return new WaitForSeconds(1);
         }
     }

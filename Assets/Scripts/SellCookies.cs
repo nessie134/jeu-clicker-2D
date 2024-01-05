@@ -9,14 +9,14 @@ public class SellCookies : MonoBehaviour
 
     public void ClickTheButton()
     {
-        if (GlobalCookies.cookieCount == 0)
+        if (GlobalLeaves.leafCount == 0)
         { //si le nombre de cookie est égal à 0
             Debug.Log("You don't have anything to sell!");
         }
         else
         {
-            GlobalCookies.cookieCount -= 1; //va affichr le nombre dans global cookies
-            Debug.Log(GlobalCookies.cookieCount);
+            GlobalLeaves.leafCount -= 1; //va affichr le nombre dans global cookies
+            Debug.Log(GlobalLeaves.leafCount);
         }
 
     }

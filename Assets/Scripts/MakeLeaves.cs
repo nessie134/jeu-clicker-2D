@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MakeCookies : MonoBehaviour
+public class MakeLeaves : MonoBehaviour
 {
     public int nbClicks = 1;
 
     public void ClickTheButton()
     {
-        GlobalCookies.cookieCount += nbClicks;
-        Debug.Log(GlobalCookies.cookieCount);
+        GlobalLeaves.leafCount += nbClicks;
+        Debug.Log(GlobalLeaves.leafCount);
     }
 }

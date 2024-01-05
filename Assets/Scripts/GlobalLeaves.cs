@@ -4,24 +4,25 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class GlobalCookies : MonoBehaviour
+public class GlobalLeaves : MonoBehaviour
 {
-    public static int cookieCount;
+    public static int leafCount;
     private TextMeshProUGUI _argent;
 
     private void Start()
     {
+        leafCount = 0;
         _argent = gameObject.GetComponentInChildren<TextMeshProUGUI>();
     }
 
     public void Update()
     {
-        _argent.text = "Argent " + cookieCount + "$";
+        _argent.text = "Argent : " + leafCount + "$";
     }
 
     public void saveCookie()
     {
-        PlayerPrefs.SetInt("nbCookies", cookieCount);
+        PlayerPrefs.SetInt("nbCookies", leafCount);
         PlayerPrefs.Save();
     }
 }
