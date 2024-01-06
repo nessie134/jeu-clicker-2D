@@ -8,17 +8,20 @@ public class changementScene : MonoBehaviour
 {   
     private GlobalLeaves _globalLeaves;
     private ciseaux _ciseaux;
+    private suspiscionBar _suspiscionBar;
 
     
     private void Start()
     {
         _globalLeaves = FindObjectOfType<GlobalLeaves>();
         _ciseaux = FindObjectOfType<ciseaux>();
+        _suspiscionBar = FindObjectOfType<suspiscionBar>();
     }
     public void ChangeScene()
     {
         _globalLeaves.saveLeaf();
         _ciseaux.saveCiseaux();
+        _suspiscionBar.saveBar();
         SceneManager.LoadScene("argentPropreInes");
     }
     
