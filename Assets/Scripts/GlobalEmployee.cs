@@ -18,6 +18,9 @@ public class GlobalEmployee : MonoBehaviour
 
     public int currentLeaves;
 
+    public static int nbOfEmployees;
+    public static int employeeLeavesPerSec;
+
     private void Start()
     {
         realText = realButton.GetComponentInChildren<TextMeshProUGUI>();
@@ -41,5 +44,6 @@ public class GlobalEmployee : MonoBehaviour
             realButton.SetActive(false);//on désac le vrai pour pas qu'on puisse appuyer dessus
             turnOffButton = false;
         }
+        
     }
 }

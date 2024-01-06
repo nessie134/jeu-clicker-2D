@@ -12,9 +12,8 @@ public class ciseaux : MonoBehaviour
         None,
         Fer,
         Or,
-        Diamant,
-        Max
-    }
+        Diamant
+    };
 
     private CiseauxLevel _ciseauxLevel;// on commence avec des ciseaux en fer
 
@@ -23,30 +22,29 @@ public class ciseaux : MonoBehaviour
     private TextMeshProUGUI _prixTexte;
     private int _prix = 10;
     private Button _button;
-  
+
 
     void Start()
     {
         _button = gameObject.GetComponent<Button>();
         _makeLeaves = FindObjectOfType<MakeLeaves>();
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        _button.interactable = false;
         loadCiseaux();
         _ciseauxLevel = CiseauxLevel.None;
         Debug.Log(_ciseauxLevel);
     }
 
-    public void achatCiseaux()
+    public void achatCiseaux()//A METTRE SUR LE BOUTON D'ACHAT
     {
         switch (_ciseauxLevel)
         {
             case CiseauxLevel.None:
             case CiseauxLevel.Fer:
             case CiseauxLevel.Or:
-            case CiseauxLevel.Diamant:
                 GlobalLeaves.leafCount -= _prix;
-                
                 break;
-            case CiseauxLevel.Max:
+            case CiseauxLevel.Diamant:
                 _button.interactable = false;
                 break;
         }
@@ -56,8 +54,8 @@ public class ciseaux : MonoBehaviour
     void Update()
     {
         CiseauxManager();
-        
-        if(GlobalLeaves.leafCount >= _prix)
+
+        if (GlobalLeaves.leafCount >= _prix)
         {
             _button.interactable = true;
         }
@@ -65,6 +63,7 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
+        Debug.Log(_ciseauxLevel);
     }
 
     public void CiseauxManager()
@@ -73,26 +72,21 @@ public class ciseaux : MonoBehaviour
         {
             case CiseauxLevel.Fer:
                 _makeLeaves.nbClicks = 2;
-                _prix = 10;
+                _prix = 20;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 break;
 
             case CiseauxLevel.Or:
                 _makeLeaves.nbClicks = 10;
-                _prix = 20;
-                _prixTexte.text = "Acheter " + _prix + "$";
-                break;
-
-            case CiseauxLevel.Diamant:
-                _makeLeaves.nbClicks = 10;
                 _prix = 30;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 break;
 
-            case CiseauxLevel.Max:
+            case CiseauxLevel.Diamant:
                 _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
-                _prix = 40;
+                _button.interactable = false;
+                _button.enabled = false;
                 break;
 
             default:

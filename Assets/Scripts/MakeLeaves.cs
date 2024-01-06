@@ -10,6 +10,6 @@ public class MakeLeaves : MonoBehaviour
     public void ClickTheButton()
     {
         GlobalLeaves.leafCount += nbClicks;
-        Debug.Log(GlobalLeaves.leafCount);
+        Debug.Log("Feuilles totales : " + GlobalLeaves.leafCount);
     }
 }

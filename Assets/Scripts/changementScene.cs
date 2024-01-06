@@ -6,24 +6,24 @@ using UnityEngine.SceneManagement;
 
 public class changementScene : MonoBehaviour
 {   
-    private GlobalLeaves _globalCookies;
+    private GlobalLeaves _globalLeaves;
     private ciseaux _ciseaux;
 
     
     private void Start()
     {
-        _globalCookies = FindObjectOfType<GlobalLeaves>();
+        _globalLeaves = FindObjectOfType<GlobalLeaves>();
         _ciseaux = FindObjectOfType<ciseaux>();
     }
     public void ChangeScene()
     {
-        _globalCookies.saveCookie();
+        _globalLeaves.saveLeaf();
         _ciseaux.saveCiseaux();
-        SceneManager.LoadScene("Argent Propre Adrien");
+        SceneManager.LoadScene("argentPropreInes");
     }
     
     public void loadArgentSale()
     {
-        SceneManager.LoadScene("Adrien Game");
+        SceneManager.LoadScene("GameInes");
     }
 }
