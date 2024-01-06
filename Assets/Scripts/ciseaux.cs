@@ -15,10 +15,9 @@ public class ciseaux : MonoBehaviour
         Diamant
     };
 
-    private CiseauxLevel _ciseauxLevel;// on commence avec des ciseaux en fer
+    private CiseauxLevel _ciseauxLevel;
 
     private MakeLeaves _makeLeaves;
-    [SerializeField] public int nbAchat;
     private TextMeshProUGUI _prixTexte;
     private int _prix = 10;
     private Button _button;
@@ -35,7 +34,7 @@ public class ciseaux : MonoBehaviour
         Debug.Log(_ciseauxLevel);
     }
 
-    public void achatCiseaux()//A METTRE SUR LE BOUTON D'ACHAT
+    public void achatCiseaux()
     {
         switch (_ciseauxLevel)
         {
