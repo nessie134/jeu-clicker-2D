@@ -21,6 +21,7 @@ public class ciseaux : MonoBehaviour
     private TextMeshProUGUI _prixTexte;
     private int _prix = 10;
     private Button _button;
+    public TextMeshProUGUI _description;
 
 
     void Start()
@@ -28,9 +29,7 @@ public class ciseaux : MonoBehaviour
         _button = gameObject.GetComponent<Button>();
         _makeLeaves = FindObjectOfType<MakeLeaves>();
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        _button.interactable = false;
         loadCiseaux();
-        _ciseauxLevel = CiseauxLevel.None;
         Debug.Log(_ciseauxLevel);
     }
 
@@ -73,23 +72,25 @@ public class ciseaux : MonoBehaviour
                 _makeLeaves.nbClicks = 2;
                 _prix = 20;
                 _prixTexte.text = "Acheter " + _prix + "$";
+                _description.text = "Ciseaux en or";
                 break;
 
             case CiseauxLevel.Or:
                 _makeLeaves.nbClicks = 10;
                 _prix = 30;
                 _prixTexte.text = "Acheter " + _prix + "$";
+                _description.text = "Ciseaux en diamant";
                 break;
 
             case CiseauxLevel.Diamant:
                 _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
                 _button.interactable = false;
-                _button.enabled = false;
                 break;
 
             default:
                 _prixTexte.text = "Acheter " + _prix + "$";
+                _description.text = "Ciseaux en fer";
                 break;
 
         }

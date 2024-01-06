@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Ines/argentPropreInes.unity
     guid: baab871a94cc07f44a1715331e5f6f8c
+  - enabled: 1
+    path: Assets/Scenes/Adrien Game.unity
+    guid: ab92cc559b87ddf4abaf9099eea460fc
+  - enabled: 1
+    path: Assets/Scenes/Argent Propre Adrien.unity
+    guid: c6d4148945124664f95f41ab1243efd6
   m_configObjects: {}
