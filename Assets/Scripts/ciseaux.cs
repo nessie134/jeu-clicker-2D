@@ -21,7 +21,7 @@ public class ciseaux : MonoBehaviour
     private TextMeshProUGUI _prixTexte;
     private int _prix = 10;
     private Button _button;
-    public TextMeshProUGUI _description;
+    [SerializeField] private TextMeshProUGUI _description;
 
 
     void Start()
@@ -90,7 +90,6 @@ public class ciseaux : MonoBehaviour
 
             default:
                 _prixTexte.text = "Acheter " + _prix + "$";
-                _description.text = "Ciseaux en fer";
                 break;
 
         }
