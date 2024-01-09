@@ -31,7 +31,7 @@ public class ciseaux : MonoBehaviour
         _button.interactable = false;
         loadCiseaux();
         _ciseauxLevel = CiseauxLevel.None;
-        Debug.Log(_ciseauxLevel);
+        //Debug.Log(_ciseauxLevel);
     }
 
     public void achatCiseaux()
@@ -62,7 +62,7 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
-        Debug.Log(_ciseauxLevel);
+        //Debug.Log(_ciseauxLevel);
     }
 
     public void CiseauxManager()

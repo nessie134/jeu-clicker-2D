@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class AutoLeaf : MonoBehaviour
 {
-    //public static int nbEmployees;
     private void Start()
     {
         StartCoroutine(CreateTheCookie());
@@ -13,8 +12,8 @@ public class AutoLeaf : MonoBehaviour
     {
         while (true)
         {
-            GlobalLeaves.leafCount += GlobalEmployee.nbOfEmployees;
-            yield return new WaitForSeconds(1);
+                GlobalLeaves.leafCount += GlobalEmployee.nbOfEmployees;
+                yield return new WaitForSeconds(1);
         }
     }
 }
