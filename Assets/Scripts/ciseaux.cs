@@ -29,6 +29,7 @@ public class ciseaux : MonoBehaviour
         _button = gameObject.GetComponent<Button>();
         _makeLeaves = FindObjectOfType<MakeLeaves>();
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        saveCiseaux();
         loadCiseaux();
         Debug.Log(_ciseauxLevel);
     }
