@@ -8,10 +8,10 @@ public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
 
-    public float minSus = 0f;
-    public float maxSus = 5;
-    public float susGenRate = 1f;
-    public float susDrainRate = 1f;
+    [SerializeField] private float minSus = 0f;
+    [SerializeField] private float maxSus = 20;
+    public static float susGenRate = 1f;
+    [SerializeField] private float susDrainRate = 1f;
 
     public float currentSus;
 
@@ -34,6 +34,7 @@ public class suspiscionBar : MonoBehaviour
             isSusBarFull = true;
             Debug.Log("GAME OVER");
         }
+        Debug.Log(susGenRate);
     }
 
     IEnumerator generateSus()
