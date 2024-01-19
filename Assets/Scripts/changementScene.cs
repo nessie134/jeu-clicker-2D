@@ -21,12 +21,12 @@ public class changementScene : MonoBehaviour
     {
         _globalLeaves.saveLeaf();
         _ciseaux.saveCiseaux();
-        SceneManager.LoadScene(1);
         _suspiscionBar.saveBar();
+        SceneManager.LoadScene("argentPropreInes");
     }
     
     public void loadArgentSale()
     {
-        SceneManager.LoadScene(0);
+        SceneManager.LoadScene("GameInes");
     }
 }

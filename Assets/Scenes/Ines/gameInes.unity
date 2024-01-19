@@ -1760,17 +1760,6 @@ RectTransform:
   m_AnchoredPosition: {x: 388.306, y: 139.721}
   m_SizeDelta: {x: 300.278, y: 300.278}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &899029619 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2227363948375425011, guid: 7b3308934beac2b408bf6f0f419a1674, type: 3}
-  m_PrefabInstance: {fileID: 928252514}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &928252514
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1859,10 +1848,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2815366128374615146, guid: 7b3308934beac2b408bf6f0f419a1674, type: 3}
-      propertyPath: _description
-      value: 
-      objectReference: {fileID: 899029619}
     - target: {fileID: 7451819400253838503, guid: 7b3308934beac2b408bf6f0f419a1674, type: 3}
       propertyPath: m_Name
       value: UpgradeHolder
