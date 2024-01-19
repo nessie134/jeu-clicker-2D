@@ -13,7 +13,7 @@ public class GlobalLeaves : MonoBehaviour
     {
         leafCount = 0;
         _argent = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        saveLeaf(); //si ça marche pas dans l'autre scene......?
+        //saveLeaf(); //si ça marche pas dans l'autre scene......?
         loadLeaf();
         Debug.Log(leafCount);
     }

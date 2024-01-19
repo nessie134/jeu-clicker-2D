@@ -8,10 +8,10 @@ public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
 
-    [SerializeField] private float minSus = 0f;
-    [SerializeField] private float maxSus = 20;
-    public static float susGenRate = 1f;
-    [SerializeField] private float susDrainRate = 1f;
+    public float minSus = 0f;
+    public float maxSus = 5;
+    public float susGenRate = 1f;
+    public float susDrainRate = 1f;
 
     public float currentSus;
 
@@ -22,7 +22,7 @@ public class suspiscionBar : MonoBehaviour
         currentSus = minSus;
         susBar.value = currentSus;
         StartCoroutine(generateSus());
-        saveBar();
+        //saveBar();
         loadBar();
     }
 
@@ -34,7 +34,6 @@ public class suspiscionBar : MonoBehaviour
             isSusBarFull = true;
             Debug.Log("GAME OVER");
         }
-        Debug.Log(susGenRate);
     }
 
     IEnumerator generateSus()
@@ -49,7 +48,7 @@ public class suspiscionBar : MonoBehaviour
                 susBar.value += susGenRate;
 
                 // Vérifier si la suspicion atteint le maximum
-                if (susBar.value == maxSus)
+                if (susBar.value >= maxSus)
                 {
                     Debug.Log("Game Over: Suspicion maximale atteinte!");
                     

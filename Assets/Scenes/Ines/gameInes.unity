@@ -2562,6 +2562,7 @@ MonoBehaviour:
   susBar: {fileID: 746085254}
   minSus: 0
   maxSus: 0
+  susGenRate: 1
   susDrainRate: 1
   currentSus: 0
 --- !u!1 &1156546369
@@ -4949,10 +4950,6 @@ PrefabInstance:
     - target: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_Name
       value: SuspiscionBar
-      objectReference: {fileID: 0}
-    - target: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-      propertyPath: m_MaxValue
-      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 9210579418803905202, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_Pivot.x
