@@ -62,7 +62,7 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
-        Debug.Log(_ciseauxLevel);
+        Debug.Log("Level ciseau " + _ciseauxLevel);
     }
 
     public void CiseauxManager()
@@ -74,6 +74,7 @@ public class ciseaux : MonoBehaviour
                 _prix = 20;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en or";
+                suspiscionBar.genMultiplier = 1.2f;
                 break;
 
             case CiseauxLevel.Or:
@@ -81,12 +82,14 @@ public class ciseaux : MonoBehaviour
                 _prix = 30;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en diamant";
+                suspiscionBar.genMultiplier = 1.5f;
                 break;
 
             case CiseauxLevel.Diamant:
                 _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
                 _button.interactable = false;
+                suspiscionBar.genMultiplier = 2f;
                 break;
 
             default:

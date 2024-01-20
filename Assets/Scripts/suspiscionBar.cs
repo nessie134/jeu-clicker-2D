@@ -13,6 +13,10 @@ public class suspiscionBar : MonoBehaviour
     public static float susGenRate = 1f;
     [SerializeField] private float susDrainRate = 1f;
 
+    public static float genMultiplier = 1f;
+    public static float drainMultiplier;
+
+
     public float currentSus;
 
     public static bool isSusBarFull = false;
@@ -34,7 +38,7 @@ public class suspiscionBar : MonoBehaviour
             isSusBarFull = true;
             Debug.Log("GAME OVER");
         }
-        Debug.Log(susGenRate);
+        Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
     }
 
     IEnumerator generateSus()
@@ -46,12 +50,33 @@ public class suspiscionBar : MonoBehaviour
             if (GlobalLeaves.leafCount >= 10)
             {
                 // Augmenter la barre de suspicion
-                susBar.value += susGenRate;
+                susBar.value += susGenRate * genMultiplier;
 
                 // Vérifier si la suspicion atteint le maximum
                 if (susBar.value >= maxSus)
                 {
                     Debug.Log("Game Over: Suspicion maximale atteinte!");
+                    
+                }
+            }
+        }
+    }
+
+    IEnumerator drainSus()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
+            if (GlobalLeaves.leafCount >= 10)
+            {
+                // Augmenter la barre de suspicion
+                susBar.value -= susDrainRate;
+
+                // Vérifier si la suspicion atteint le maximum
+                if (susBar.value <= minSus)
+                {
+                    Debug.Log("Game Over: Suspicion minimale atteinte!");
                     
                 }
             }
