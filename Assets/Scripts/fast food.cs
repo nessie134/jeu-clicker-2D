@@ -5,23 +5,21 @@ using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.UI;
 
-public class Laverie : Business
+public class fastfood : Business
 {   
-    public static int nbOfLaveries;
+    public static int nbOfFf;
     public static float drainMultiplier;
     
-    public Laverie(string name, int cost) : base(name, cost)
+    public fastfood(string name, int cost) : base(name, cost)
     {
-        name = "Laverie";
-        cost = 50;
+        name = "Fast Food";
+        cost = 1000;
     }
 
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 1f;
-        nbOfLaveries++;
+        suspiscionBar.drainMultiplier = 3f;
+        nbOfFf++;
     }
 }
-
-
