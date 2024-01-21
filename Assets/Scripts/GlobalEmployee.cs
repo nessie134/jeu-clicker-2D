@@ -20,6 +20,7 @@ public class GlobalEmployee : MonoBehaviour
 
     public static int nbOfEmployees;
     public static int employeeLeavesPerSec;
+    public static float genMultiplier;
 
     private void Start()
     {
@@ -30,6 +31,7 @@ public class GlobalEmployee : MonoBehaviour
     void Update()
     {
         currentLeaves = GlobalLeaves.leafCount;
+        genMultiplier = 1.1f;
         realText.text = "Acheter " + employeeValue + "$";
         fakeText.text = "Acheter " + employeeValue + "$";
 

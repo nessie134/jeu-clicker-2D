@@ -7,7 +7,6 @@ using Button = UnityEngine.UI.Button;
 
 public class ciseaux : MonoBehaviour
 {
-    private suspicionBar susBar;
     public enum CiseauxLevel
     {
         None,
@@ -23,6 +22,8 @@ public class ciseaux : MonoBehaviour
     private int _prix = 10;
     private Button _button;
     [SerializeField] private TextMeshProUGUI _description;
+
+    public static float genMultiplier;
 
 
     void Start()
@@ -75,7 +76,7 @@ public class ciseaux : MonoBehaviour
                 _prix = 20;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en or";
-                susBar.genMultiplier = 1.2f;
+                genMultiplier = 1.2f;
                 break;
 
             case CiseauxLevel.Or:
@@ -83,14 +84,14 @@ public class ciseaux : MonoBehaviour
                 _prix = 30;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en diamant";
-                susBar.genMultiplier = 1.5f;
+                genMultiplier = 1.5f;
                 break;
 
             case CiseauxLevel.Diamant:
                 _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
                 _button.interactable = false;
-                susBar.genMultiplier = 2f;
+                genMultiplier = 2f;
                 break;
 
             default:
