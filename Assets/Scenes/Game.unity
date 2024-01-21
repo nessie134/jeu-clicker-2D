@@ -2809,6 +2809,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SuspiscionBar (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_MaxValue
       value: 100

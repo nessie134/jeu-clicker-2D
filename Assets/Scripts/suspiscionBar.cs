@@ -58,9 +58,11 @@ public class suspiscionBar : MonoBehaviour
             }
             if (susBar.value >= maxSus)
             {
+                
                 Debug.Log("GAME OVER: Suspicion maximale atteinte!" + susBar.value);
                 AudioManager.Instance.musicSource.Stop();
-                AudioManager.Instance.PlaySfx("game over");
+                AudioManager.Instance.PlaySfx("game over", 0.5f);
+                Time.timeScale = 0f; // Pause the game
 
             }
         }

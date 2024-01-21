@@ -37,7 +37,7 @@ public class ciseaux : MonoBehaviour
 
     public void achatCiseaux()
     {
-        AudioManager.Instance.PlaySfx("clickUpgrade");
+        AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         switch (_ciseauxLevel)
         {
             case CiseauxLevel.None:

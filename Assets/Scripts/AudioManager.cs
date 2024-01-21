@@ -44,7 +44,7 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlaySfx(string name)
+    public void PlaySfx(string name, float volume)
     {
         Sound sound = Array.Find(sfxSounds, s => s.name == name);//vérifie si la propriété name de chaque élément s dans le tableau est égale au paramètre name fourni.
         if (sound == null)
@@ -53,6 +53,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
+            sfxSource.volume = volume;
             sfxSource.PlayOneShot(sound.clip);
         }
     }
