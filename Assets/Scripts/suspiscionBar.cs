@@ -8,8 +8,8 @@ public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
 
-    [SerializeField] private float minSus = 0f;
-    [SerializeField] private float maxSus = 20;
+    public float minSus = 0f;
+    public float maxSus = 20;
     public static float susGenRate = 1f;
     [SerializeField] private float susDrainRate = 1f;
 
@@ -74,7 +74,7 @@ public class suspiscionBar : MonoBehaviour
             if (GlobalLeaves.leafCount >= 10)
             {
                 // Augmenter la barre de suspicion
-                susBar.value -= susDrainRate * drainMultiplier;
+                susBar.value -= susGenRate * drainMultiplier;
 
                 // Vérifier si la suspicion atteint le maximum
                 if (susBar.value <= minSus)

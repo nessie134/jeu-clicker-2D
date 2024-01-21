@@ -16,7 +16,7 @@ public class PurchaseLog : MonoBehaviour
 
         GlobalEmployee.employeeLeavesPerSec += 1;
         suspiscionBar.genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees + ciseaux.genMultiplier;
-
+        suspiscionBar.drainMultiplier = Laverie.drainMultiplier * Laverie.nbOfLaveries;// additioner les autres commerces
 
         
 
@@ -26,6 +26,7 @@ public class PurchaseLog : MonoBehaviour
     {
         /*Debug.Log("nombre d'employés : " + GlobalEmployee.nbOfEmployees);
         Debug.Log("nombre de feuilles des employés : " + GlobalEmployee.employeeLeavesPerSec);*/
-        Debug.Log("Multiplicateur global = " + suspiscionBar.genMultiplier);
+        Debug.Log("Multiplicateur de gen global = " + suspiscionBar.genMultiplier);
+        Debug.Log("Multiplicateur de drain global = " + suspiscionBar.genMultiplier);
     }
 }

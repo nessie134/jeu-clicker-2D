@@ -6,13 +6,8 @@ using UnityEngine.Rendering;
 
 public class Laverie : Business
 {
-
     public static float drainMultiplier;
-    public static int nbOfLaveries
-    {
-        get => nbOfLaveries;
-        set => nbOfLaveries = value;
-    }
+    public static int nbOfLaveries;
 
 
     public Laverie(string name, int cost) : base(name, cost)
@@ -23,7 +18,7 @@ public class Laverie : Business
 
     public override void BusinessAction()
     {
-        drainMultiplier = 1.5f;
+        suspiscionBar.drainMultiplier = 4f;
         nbOfLaveries += 1;
 
     }
