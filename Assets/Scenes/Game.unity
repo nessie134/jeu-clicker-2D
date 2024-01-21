@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 41506688}
   - component: {fileID: 41506687}
   m_Layer: 5
-  m_Name: Image (4)
+  m_Name: Bar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,7 +1033,7 @@ GameObject:
   - component: {fileID: 223204576}
   - component: {fileID: 223204575}
   m_Layer: 5
-  m_Name: Image (5)
+  m_Name: Hotel
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1386,7 +1386,7 @@ GameObject:
   - component: {fileID: 370527765}
   - component: {fileID: 370527764}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: descriptionText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1431,7 +1431,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: description
+  m_text: reduit l'inde de recherche
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -2042,7 +2042,7 @@ GameObject:
   - component: {fileID: 487724695}
   - component: {fileID: 487724694}
   m_Layer: 5
-  m_Name: "acheterEmploy\xE9s"
+  m_Name: buyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2176,7 +2176,7 @@ GameObject:
   - component: {fileID: 493009633}
   - component: {fileID: 493009632}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: upgradeName
   m_TagString: ciseaux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2222,7 +2222,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: laverie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -2536,7 +2536,7 @@ GameObject:
   - component: {fileID: 525254986}
   - component: {fileID: 525254985}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: descriptionText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2811,7 +2811,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_MaxValue
-      value: 50
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 9210579418803905202, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_Pivot.x
@@ -2908,49 +2908,13 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 564602526}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
 --- !u!224 &564602523 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9210579418803905202, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
   m_PrefabInstance: {fileID: 564602522}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &564602524 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-  m_PrefabInstance: {fileID: 564602522}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &564602525 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-  m_PrefabInstance: {fileID: 564602522}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564602524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &564602526
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 564602524}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a3d96a626f5f54da6f257f1d903054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  susBar: {fileID: 564602525}
-  minSus: 0
-  maxSus: 5
-  susDrainRate: 1
-  currentSus: 0
 --- !u!1 &576583463
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,7 +2927,7 @@ GameObject:
   - component: {fileID: 576583466}
   - component: {fileID: 576583465}
   m_Layer: 5
-  m_Name: Image (3)
+  m_Name: Casino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3190,10 +3154,10 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1822243094}
-  - {fileID: 1452849912}
-  - {fileID: 1042781057}
-  - {fileID: 576583464}
   - {fileID: 41506686}
+  - {fileID: 1042781057}
+  - {fileID: 1452849912}
+  - {fileID: 576583464}
   - {fileID: 223204574}
   m_Father: {fileID: 487620763}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4921,7 +4885,7 @@ GameObject:
   - component: {fileID: 1009485060}
   - component: {fileID: 1009485059}
   m_Layer: 5
-  m_Name: "acheterEmploy\xE9s"
+  m_Name: buyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5266,7 +5230,7 @@ GameObject:
   - component: {fileID: 1042781059}
   - component: {fileID: 1042781058}
   m_Layer: 5
-  m_Name: Image (2)
+  m_Name: Alimentation
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5464,7 +5428,7 @@ GameObject:
   - component: {fileID: 1076434876}
   - component: {fileID: 1076434875}
   m_Layer: 5
-  m_Name: EmployeeButton
+  m_Name: buyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6407,7 +6371,7 @@ GameObject:
   - component: {fileID: 1327546330}
   - component: {fileID: 1327546329}
   m_Layer: 5
-  m_Name: "acheterEmploy\xE9s"
+  m_Name: buyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6814,7 +6778,7 @@ GameObject:
   - component: {fileID: 1447374630}
   - component: {fileID: 1447374633}
   m_Layer: 5
-  m_Name: FakeEmployeeButton
+  m_Name: buyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6946,7 +6910,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f5794099a5e56d342a37ae863c058a49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _description: {fileID: 0}
+  _description: {fileID: 525254985}
 --- !u!1 &1451572469
 GameObject:
   m_ObjectHideFlags: 0
@@ -7093,7 +7057,7 @@ GameObject:
   - component: {fileID: 1452849914}
   - component: {fileID: 1452849913}
   m_Layer: 5
-  m_Name: Image (1)
+  m_Name: Fastfood
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7169,7 +7133,7 @@ GameObject:
   - component: {fileID: 1495713255}
   - component: {fileID: 1495713254}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: upgradeNameText (TMP)
   m_TagString: ciseaux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7560,8 +7524,9 @@ GameObject:
   - component: {fileID: 1551694794}
   - component: {fileID: 1551694793}
   - component: {fileID: 1551694792}
+  - component: {fileID: 1551694795}
   m_Layer: 5
-  m_Name: FakeEmployeeButton
+  m_Name: buyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -7630,7 +7595,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1551694793}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1551694795}
+        m_TargetAssemblyTypeName: Laverie, Assembly-CSharp
+        m_MethodName: BusinessAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1551694793
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7669,6 +7646,20 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1551694790}
   m_CullTransparentMesh: 1
+--- !u!114 &1551694795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551694790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e72aeecdd2b7f54e92f720e786f4558, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  businessName: laverie
+  businessCost: 200
 --- !u!1 &1566781980
 GameObject:
   m_ObjectHideFlags: 0
@@ -8052,7 +8043,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1679936262}
   m_Layer: 5
-  m_Name: "groupeEmploy\xE9s"
+  m_Name: textHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8224,7 +8215,7 @@ GameObject:
   - component: {fileID: 1710709753}
   - component: {fileID: 1710709754}
   m_Layer: 5
-  m_Name: "groupeEmploy\xE9s"
+  m_Name: employeeUpgradeHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8580,7 +8571,7 @@ GameObject:
   - component: {fileID: 1822243096}
   - component: {fileID: 1822243095}
   m_Layer: 5
-  m_Name: Image
+  m_Name: LaverieHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8795,7 +8786,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_MaxValue
-      value: 50
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
+      propertyPath: m_Interactable
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9210579418803905202, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
       propertyPath: m_Pivot.x
@@ -8892,10 +8887,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1984957271}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
 --- !u!1 &1864154587
 GameObject:
@@ -8907,7 +8899,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1864154588}
   m_Layer: 5
-  m_Name: "groupeEmploy\xE9s"
+  m_Name: scissorUpgradeHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9136,7 +9128,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892444241}
   m_Layer: 5
-  m_Name: "groupeEmploy\xE9s"
+  m_Name: textHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9578,39 +9570,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1943594038}
   m_CullTransparentMesh: 1
---- !u!1 &1984957270 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4107455516674966877, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-  m_PrefabInstance: {fileID: 1845260471}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1984957271
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984957270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 84a3d96a626f5f54da6f257f1d903054, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  susBar: {fileID: 1984957272}
-  minSus: 0
-  maxSus: 5
-  susDrainRate: 1
-  currentSus: 0
---- !u!114 &1984957272 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4324017744186596938, guid: 54893ee5dccc67946b1953af2496114c, type: 3}
-  m_PrefabInstance: {fileID: 1845260471}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1984957270}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1994425212
 GameObject:
   m_ObjectHideFlags: 0

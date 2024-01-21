@@ -1,98 +1,81 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class suspiscionBar : MonoBehaviour
+public class suspicionBar : MonoBehaviour
 {
     public Slider susBar;
 
     [SerializeField] private float minSus = 0f;
-    [SerializeField] private float maxSus = 20;
-    public static float susGenRate = 1f;
+    [SerializeField] private float maxSus = 20f;
+    [SerializeField] private float susGenRate = 1f;
     [SerializeField] private float susDrainRate = 1f;
 
-    public static float genMultiplier = 1f;
-    public static float drainMultiplier;
+    private float currentSus;
 
+    public float genMultiplier = 1f;
+    public float drainMultiplier = 1f;
 
-    public float currentSus;
+    private bool isSusBarFull = false;
 
-    public static bool isSusBarFull = false;
+    private bool isGamePaused = false;
 
     void Start()
     {
         currentSus = minSus;
         susBar.value = currentSus;
-        StartCoroutine(generateSus());
+        StartCoroutine(GenerateAndDrain());
         //saveBar();
-        loadBar();
+        //loadBar();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (susBar.value == maxSus)
+        if (currentSus >= maxSus)
         {
             isSusBarFull = true;
             Debug.Log("GAME OVER");
+            // Ajoutez ici des actions spécifiques au Game Over (chargement de scène, désactivation de contrôles, etc.)
         }
-        Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
+
+        Debug.Log("susBar.value: " + susBar.value);
+        Debug.Log("genMultiplier: " + genMultiplier);
+        Debug.Log("drainMultiplier: " + drainMultiplier);
     }
 
-    IEnumerator generateSus()
+    IEnumerator GenerateAndDrain()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
-            if (GlobalLeaves.leafCount >= 10)
-            {
-                // Augmenter la barre de suspicion
-                susBar.value += susGenRate * genMultiplier;
 
-                // Vérifier si la suspicion atteint le maximum
-                if (susBar.value >= maxSus)
-                {
-                    Debug.Log("Game Over: Suspicion maximale atteinte!");
-                    
-                }
+            if (!isGamePaused)
+            {
+                // Génération de la barre de suspicion
+                currentSus += susGenRate * genMultiplier;
+
+                // Drainage de la barre de suspicion
+                currentSus -= susDrainRate * drainMultiplier;
+
+                // Assurez-vous que la valeur reste dans la plage définie
+                currentSus = Mathf.Clamp(currentSus, minSus, maxSus);
+
+                // Mettez à jour la valeur de la barre de suspicion
+                susBar.value = currentSus;
             }
         }
     }
 
-    IEnumerator drainSus()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(1f);
-            // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
-            if (GlobalLeaves.leafCount >= 10)
-            {
-                // Augmenter la barre de suspicion
-                susBar.value -= susDrainRate;
+    // ... Autres méthodes et fonctions nécessaires
 
-                // Vérifier si la suspicion atteint le maximum
-                if (susBar.value <= minSus)
-                {
-                    Debug.Log("Game Over: Suspicion minimale atteinte!");
-                    
-                }
-            }
-        }
+    public void PauseGame()
+    {
+        isGamePaused = true;
     }
 
-    public void saveBar()
+    public void ResumeGame()
     {
-        PlayerPrefs.SetFloat("susBar", susBar.value);
-        PlayerPrefs.Save();
+        isGamePaused = false;
     }
-
-    public void loadBar()
-    {
-        susBar.value = PlayerPrefs.GetFloat("susBar");
-    }
-
-
 }

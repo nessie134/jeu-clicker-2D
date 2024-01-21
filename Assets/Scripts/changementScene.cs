@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 
 public class changementScene : MonoBehaviour
 {   
-    private GlobalLeaves _globalLeaves;
+   /* private GlobalLeaves _globalLeaves;
     private ciseaux _ciseaux;
     private suspiscionBar _suspiscionBar;
 
@@ -19,7 +19,7 @@ public class changementScene : MonoBehaviour
     }
     public void ChangeScene()
     {
-        _globalLeaves.saveLeaf();
+        //_globalLeaves.saveLeaf();
         _ciseaux.saveCiseaux();
         SceneManager.LoadScene(1);
         _suspiscionBar.saveBar();
@@ -28,5 +28,5 @@ public class changementScene : MonoBehaviour
     public void loadArgentSale()
     {
         SceneManager.LoadScene(0);
-    }
+    }*/
 }
