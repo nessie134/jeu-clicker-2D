@@ -26,7 +26,7 @@ public class PurchaseLog : MonoBehaviour
     {
         /*Debug.Log("nombre d'employés : " + GlobalEmployee.nbOfEmployees);
         Debug.Log("nombre de feuilles des employés : " + GlobalEmployee.employeeLeavesPerSec);*/
-        Debug.Log("Multiplicateur de gen global = " + suspiscionBar.genMultiplier);
-        Debug.Log("Multiplicateur de drain global = " + suspiscionBar.genMultiplier);
+        /*Debug.Log("Multiplicateur de gen global = " + suspiscionBar.genMultiplier);
+        Debug.Log("Multiplicateur de drain global = " + suspiscionBar.genMultiplier);*/
     }
 }

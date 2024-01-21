@@ -33,11 +33,11 @@ public class ciseaux : MonoBehaviour
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         saveCiseaux();
         loadCiseaux();
-        Debug.Log(_ciseauxLevel);
     }
 
     public void achatCiseaux()
     {
+        AudioManager.Instance.PlaySfx("clickUpgrade");
         switch (_ciseauxLevel)
         {
             case CiseauxLevel.None:
@@ -50,6 +50,7 @@ public class ciseaux : MonoBehaviour
                 break;
         }
         _ciseauxLevel++;
+        
     }
 
     void Update()
@@ -64,7 +65,7 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
-        Debug.Log("Level ciseau " + _ciseauxLevel);
+        //Debug.Log("Level ciseau " + _ciseauxLevel);
     }
 
     public void CiseauxManager()
