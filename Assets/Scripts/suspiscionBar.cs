@@ -1,81 +1,101 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class suspicionBar : MonoBehaviour
+public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
 
-    [SerializeField] private float minSus = 0f;
-    [SerializeField] private float maxSus = 20f;
-    [SerializeField] private float susGenRate = 1f;
+    public float minSus = 0f;
+    public float maxSus = 20;
+    public static float susGenRate = 1f;
     [SerializeField] private float susDrainRate = 1f;
+
+    public static float genMultiplier = 1f;
+    public static float drainMultiplier;
+
 
     private float currentSus;
 
-    public float genMultiplier = 1f;
-    public float drainMultiplier = 1f;
-
-    private bool isSusBarFull = false;
-
-    private bool isGamePaused = false;
+    public static bool isSusBarFull = false;
 
     void Start()
     {
         currentSus = minSus;
         susBar.value = currentSus;
-        StartCoroutine(GenerateAndDrain());
+        StartCoroutine(generateSus());
+        StartCoroutine(drainSus());
         //saveBar();
-        //loadBar();
+        loadBar();
     }
 
+    // Update is called once per frame
     void Update()
     {
-        if (currentSus >= maxSus)
+        if (susBar.value == maxSus)
         {
             isSusBarFull = true;
             Debug.Log("GAME OVER");
-            // Ajoutez ici des actions spécifiques au Game Over (chargement de scène, désactivation de contrôles, etc.)
         }
-
-        Debug.Log("susBar.value: " + susBar.value);
-        Debug.Log("genMultiplier: " + genMultiplier);
-        Debug.Log("drainMultiplier: " + drainMultiplier);
+        Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
+        Debug.Log("drain rate = " + drainMultiplier);
     }
 
-    IEnumerator GenerateAndDrain()
+    IEnumerator generateSus()
     {
         while (true)
         {
             yield return new WaitForSeconds(1f);
-
-            if (!isGamePaused)
+            // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
+            if (GlobalLeaves.leafCount >= 10)
             {
-                // Génération de la barre de suspicion
-                currentSus += susGenRate * genMultiplier;
+                // Augmenter la barre de suspicion
+                susBar.value += susGenRate * genMultiplier;
 
-                // Drainage de la barre de suspicion
-                currentSus -= susDrainRate * drainMultiplier;
-
-                // Assurez-vous que la valeur reste dans la plage définie
-                currentSus = Mathf.Clamp(currentSus, minSus, maxSus);
-
-                // Mettez à jour la valeur de la barre de suspicion
-                susBar.value = currentSus;
+                // Vérifier si la suspicion atteint le maximum
+                if (susBar.value >= maxSus)
+                {
+                    Debug.Log("Game Over: Suspicion maximale atteinte!");
+                    
+                }
+                
             }
         }
     }
 
-    // ... Autres méthodes et fonctions nécessaires
-
-    public void PauseGame()
+    IEnumerator drainSus()
     {
-        isGamePaused = true;
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
+            if (GlobalLeaves.leafCount >= 10)
+            {
+                // Augmenter la barre de suspicion
+                susBar.value -= susGenRate * drainMultiplier;
+
+                // Vérifier si la suspicion atteint le maximum
+                if (susBar.value <= minSus)
+                {
+                    Debug.Log("Game Over: Suspicion minimale atteinte!");
+                    
+                }
+            }
+        }
     }
 
-    public void ResumeGame()
+    public void saveBar()
     {
-        isGamePaused = false;
+        PlayerPrefs.SetFloat("susBar", susBar.value);
+        PlayerPrefs.Save();
     }
+
+    public void loadBar()
+    {
+        susBar.value = PlayerPrefs.GetFloat("susBar");
+    }
+
+
 }

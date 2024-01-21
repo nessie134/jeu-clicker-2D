@@ -5,7 +5,6 @@ using UnityEngine;
 public class PurchaseLog : MonoBehaviour
 {
     public GameObject autoLeaf;//on créer un gameObject solo sur lequel on met le script de l'auto leaf car on doit l'activer(désactivé au début du jeu)
-    private suspicionBar susBar;
     public void StartAutoLeaf()//à mettre sur le bouton
     {
         autoLeaf.SetActive(true);
@@ -16,7 +15,8 @@ public class PurchaseLog : MonoBehaviour
         GlobalEmployee.turnOffButton = true;//On désactive le bouton pour éviter de spam l'achat alors qu'on a pas assez de feuilles
 
         GlobalEmployee.employeeLeavesPerSec += 1;
-        susBar.genMultiplier = 1.1f * GlobalEmployee.nbOfEmployees;
+        suspiscionBar.genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees + ciseaux.genMultiplier;
+        suspiscionBar.drainMultiplier = Laverie.drainMultiplier * Laverie.nbOfLaveries;// additioner les autres commerces
 
         
 
@@ -26,6 +26,7 @@ public class PurchaseLog : MonoBehaviour
     {
         /*Debug.Log("nombre d'employés : " + GlobalEmployee.nbOfEmployees);
         Debug.Log("nombre de feuilles des employés : " + GlobalEmployee.employeeLeavesPerSec);*/
-
+        Debug.Log("Multiplicateur de gen global = " + suspiscionBar.genMultiplier);
+        Debug.Log("Multiplicateur de drain global = " + suspiscionBar.genMultiplier);
     }
 }
