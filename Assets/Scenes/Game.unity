@@ -5435,7 +5435,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   businessName: hotel
-  businessCost: 10000
+  businessCost: 10
 --- !u!1 &1076434873
 GameObject:
   m_ObjectHideFlags: 0
@@ -6859,7 +6859,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   businessName: fast food
-  businessCost: 500
+  businessCost: 10
 --- !u!1 &1327546327
 GameObject:
   m_ObjectHideFlags: 0
@@ -8053,7 +8053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   businessName: bar
-  businessCost: 175
+  businessCost: 10
 --- !u!1 &1551694790
 GameObject:
   m_ObjectHideFlags: 0
@@ -8201,7 +8201,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   businessName: laverie
-  businessCost: 50
+  businessCost: 10
 --- !u!1 &1566781980
 GameObject:
   m_ObjectHideFlags: 0
@@ -11530,7 +11530,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   businessName: casino
-  businessCost: 50000
+  businessCost: 10
 --- !u!1 &2120584883
 GameObject:
   m_ObjectHideFlags: 0

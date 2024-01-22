@@ -19,7 +19,7 @@ public class fastfood : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 3f;
+        drainMultiplier = 3f;
         nbOfFf++;
     }
 }

@@ -82,14 +82,14 @@ public class ciseaux : MonoBehaviour
                 _prix = 30;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en diamant";
-                genMultiplier = 1.5f;
+                genMultiplier = 1.5f + 1.2f;
                 break;
 
             case CiseauxLevel.Diamant:
                 _makeLeaves.nbClicks = 100;
                 _prixTexte.text = "Amélioration max";
                 _button.interactable = false;
-                genMultiplier = 2f;
+                genMultiplier = 2f + 2.7f;
                 break;
 
             default:

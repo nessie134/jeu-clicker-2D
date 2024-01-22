@@ -20,7 +20,7 @@ public class casino : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 5f;
+        drainMultiplier = 5f;
         nbOfCas++;
     }
 }
