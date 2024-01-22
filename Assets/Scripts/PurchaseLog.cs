@@ -17,10 +17,11 @@ public class PurchaseLog : MonoBehaviour
 
         GlobalEmployee.employeeLeavesPerSec += 1;
         suspiscionBar.genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees + ciseaux.genMultiplier;
-        suspiscionBar.drainMultiplier = Laverie.drainMultiplier * Laverie.nbOfLaveries;// additioner les autres commerces
-
-        
-
+        suspiscionBar.drainMultiplier = Laverie.drainMultiplier * Laverie.nbOfLaveries +
+                                        bar.drainMultiplier * bar.nbOfBars + 
+                                        hotel.drainMultiplier * hotel.nbOfHotel +
+                                        fastfood.drainMultiplier * fastfood.nbOfFf +
+                                        casino.drainMultiplier * casino.nbOfCas;
     }
 
     public void Update()

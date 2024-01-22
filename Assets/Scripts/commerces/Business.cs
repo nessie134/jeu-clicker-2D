@@ -4,39 +4,42 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Business : MonoBehaviour
+public class Business : MonoBehaviour
 {
-    private TextMeshProUGUI _prixTexte;
+    
     public string businessName;
-    //public int businessLevel;
     public int businessCost;
+    private TextMeshProUGUI _text;
     private Button _button;
-
+    private bool _isBought = false;
     public void Start()
     {
+        _text = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         _button = gameObject.GetComponent<Button>();
-        _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        _text.text = businessCost + "$";
     }
-
-    private void Update()
+    public void Update()
     {
-        if (GlobalLeaves.leafCount >= businessCost)
+        if (PropreArgent.argent >= businessCost)
         {
             _button.interactable = true;
         }
-        else
+        else if (_isBought)
         {
             _button.interactable = false;
         }
     }
-
+    
     public Business(string name, int cost)
     {
         businessName = name;
         businessCost = cost;
-
-        _prixTexte.text = "Acheter " + cost + "$";
     }
 
-    public abstract void BusinessAction();
+    public virtual void BusinessAction()
+    {
+        _isBought = true;
+        _text.text = "Déjà acheté";
+        PropreArgent.argent -= businessCost;
+    }
 }
