@@ -18,8 +18,17 @@ public class bar : Business
 
     public override void BusinessAction()
     {
+        StartCoroutine(Farm());
         base.BusinessAction();
         drainMultiplier += 3f;
         nbOfBars++;
+    }
+    IEnumerator Farm()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            PropreArgent.argent += 10;
+        }
     }
 }

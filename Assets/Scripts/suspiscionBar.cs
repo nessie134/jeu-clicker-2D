@@ -42,16 +42,16 @@ public class suspiscionBar : MonoBehaviour
         }
         else
         {
-        genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
+            genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
                                         ciseaux.genMultiplier;
 
-        drainMultiplier = bar.drainMultiplier * bar.nbOfBars +
+            drainMultiplier = bar.drainMultiplier * bar.nbOfBars +
                                         hotel.drainMultiplier * hotel.nbOfHotel +
                                         fastfood.drainMultiplier * fastfood.nbOfFf +
                                         casino.drainMultiplier * casino.nbOfCas;
 
-        Debug.Log("Multiplicateur de gen global = " + genMultiplier);
-        Debug.Log("Multiplicateur de drain global = " + genMultiplier);
+            Debug.Log("Multiplicateur de gen global = " + genMultiplier);
+            Debug.Log("Multiplicateur de drain global = " + genMultiplier);
 
         }
        

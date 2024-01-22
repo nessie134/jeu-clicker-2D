@@ -4,36 +4,36 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 
-public class robots : MonoBehaviour
+public class hangar : MonoBehaviour
 {
     
-    private TextMeshProUGUI _robotsDesc;
+    private TextMeshProUGUI _hangarDesc;
     private int prix;
     private Button _button;
-    public static int nbRobots;
-    public static float genMultiplier = 2f;
+    public static int nbHangar;
+    public static float genMultiplier = 10f;
     
     
     // Start is called before the first frame update
     void Start()
     {
-        _robotsDesc = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        prix = 100;
+        _hangarDesc = gameObject.GetComponentInChildren<TextMeshProUGUI>();
+        prix = 100000;
         _button = gameObject.GetComponent<Button>();
     }
     
-    public void achatRobots()
+    public void achatHangar()
     {
         AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         GlobalLeaves.leafCount -= prix;
-        prix += 200;
-        nbRobots++;
-        genMultiplier += 0.4f;
+        nbHangar++;
+        prix += 500000 * nbHangar;
+        genMultiplier += 3f;
         StartCoroutine(Farm());
     }
     void Update()
     {
-        _robotsDesc.text = "Acheter " + prix + "$";
+        _hangarDesc.text = "Acheter " + prix + "$";
         _button.interactable = GlobalLeaves.leafCount >= prix;
     }
     IEnumerator Farm()
@@ -41,7 +41,7 @@ public class robots : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            GlobalLeaves.leafCount += 10 * nbRobots;
+            GlobalLeaves.leafCount += 50000 * nbHangar;
         }
     }
 }
