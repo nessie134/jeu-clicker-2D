@@ -8,10 +8,10 @@ public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
 
-    public float minSus = 0f;
-    public float maxSus = 20;
+    [SerializeField] private float minSus = 0f;
+    [SerializeField] private float maxSus = 100f;
     public static float susGenRate = 1f;
-    [SerializeField] private float susDrainRate = 1f;
+    public float susDrainRate = 1f;
 
     public static float genMultiplier = 1f;
     public static float drainMultiplier;
@@ -23,8 +23,8 @@ public class suspiscionBar : MonoBehaviour
 
     void Start()
     {
-        currentSus = minSus;
-        susBar.value = currentSus;
+        
+        susBar.value = minSus;
         StartCoroutine(generateSus());
         StartCoroutine(drainSus());
         //saveBar();
@@ -34,13 +34,12 @@ public class suspiscionBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (susBar.value == maxSus)
-        {
-            isSusBarFull = true;
-            Debug.Log("GAME OVER");
-        }
-        Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
+        currentSus = susBar.value;
+        Debug.Log("current sus : " + currentSus);
+        Debug.Log("max sus : " + maxSus);
+        /*Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
         Debug.Log("drain rate = " + drainMultiplier);
+        Debug.Log("Nombre de laveries : " + Laverie.nbOfLaveries);*/
     }
 
     IEnumerator generateSus()
@@ -55,12 +54,16 @@ public class suspiscionBar : MonoBehaviour
                 susBar.value += susGenRate * genMultiplier;
 
                 // Vérifier si la suspicion atteint le maximum
-                if (susBar.value >= maxSus)
-                {
-                    Debug.Log("Game Over: Suspicion maximale atteinte!");
-                    
-                }
+
+            }
+            if (susBar.value >= maxSus)
+            {
                 
+                Debug.Log("GAME OVER: Suspicion maximale atteinte!" + susBar.value);
+                AudioManager.Instance.musicSource.Stop();
+                AudioManager.Instance.PlaySfx("game over", 0.5f);
+                Time.timeScale = 0f; // Pause the game
+
             }
         }
     }
@@ -75,16 +78,17 @@ public class suspiscionBar : MonoBehaviour
             {
                 // Augmenter la barre de suspicion
                 susBar.value -= susGenRate * drainMultiplier;
+            }
 
-                // Vérifier si la suspicion atteint le maximum
-                if (susBar.value <= minSus)
-                {
-                    Debug.Log("Game Over: Suspicion minimale atteinte!");
-                    
-                }
+            // Vérifier si la suspicion atteint le maximum
+            if (susBar.value <= minSus)
+            {
+                Debug.Log("Game Over: Suspicion minimale atteinte!");
+
             }
         }
     }
+
 
     public void saveBar()
     {

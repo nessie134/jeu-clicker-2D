@@ -13,24 +13,11 @@ public class GlobalLeaves : MonoBehaviour
     {
         leafCount = 0;
         _argent = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        saveLeaf(); //si ça marche pas dans l'autre scene......?
-        loadLeaf();
-        Debug.Log(leafCount);
     }
 
     public void Update()
     {
         _argent.text = "Argent " + leafCount + "$";
     }
-
-    public void saveLeaf()
-    {
-        PlayerPrefs.SetInt("nbCookies", leafCount);
-        PlayerPrefs.Save();
-    }
-
-    public void loadLeaf()
-    {
-        leafCount = PlayerPrefs.GetInt("nbCookies");
-    }
+    
 }

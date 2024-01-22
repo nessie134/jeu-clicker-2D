@@ -31,13 +31,11 @@ public class ciseaux : MonoBehaviour
         _button = gameObject.GetComponent<Button>();
         _makeLeaves = FindObjectOfType<MakeLeaves>();
         _prixTexte = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-        saveCiseaux();
-        loadCiseaux();
-        Debug.Log(_ciseauxLevel);
     }
 
     public void achatCiseaux()
     {
+        AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         switch (_ciseauxLevel)
         {
             case CiseauxLevel.None:
@@ -50,6 +48,7 @@ public class ciseaux : MonoBehaviour
                 break;
         }
         _ciseauxLevel++;
+        
     }
 
     void Update()
@@ -64,7 +63,7 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
-        Debug.Log("Level ciseau " + _ciseauxLevel);
+        //Debug.Log("Level ciseau " + _ciseauxLevel);
     }
 
     public void CiseauxManager()
@@ -100,14 +99,5 @@ public class ciseaux : MonoBehaviour
 
         }
     }
-
-    public void saveCiseaux()
-    {
-        PlayerPrefs.SetInt("ciseauLevel", (int)_ciseauxLevel);
-        PlayerPrefs.Save();
-    }
-    public void loadCiseaux()
-    {
-        _ciseauxLevel = (CiseauxLevel)PlayerPrefs.GetInt("ciseauLevel", 0);
-    }
+    
 }
