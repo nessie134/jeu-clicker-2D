@@ -17,7 +17,7 @@ public class PropreArgent : MonoBehaviour
     {
         _argent.text = "Argent " + argent + "$";
     }
-
+    
     public void cliquePropre()
     {
         argent += 1;

@@ -63,7 +63,6 @@ public class ciseaux : MonoBehaviour
         {
             _button.interactable = false;
         }
-        //Debug.Log("Level ciseau " + _ciseauxLevel);
     }
 
     public void CiseauxManager()
