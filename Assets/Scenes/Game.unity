@@ -3629,6 +3629,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 752462985}
   _rectTransform2: {fileID: 1878991534}
+  _transform: {fileID: 0}
 --- !u!114 &752462989
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8798,7 +8799,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fakeButton: {fileID: 522578563}
-  realButton: {fileID: 0}
+  realButton: {fileID: 1076434873}
   currentLeaves: 0
 --- !u!1 &1717729731
 GameObject:
@@ -9822,6 +9823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _rectTransform: {fileID: 752462985}
   _rectTransform2: {fileID: 1878991534}
+  _transform: {fileID: 0}
 --- !u!114 &1878991536
 MonoBehaviour:
   m_ObjectHideFlags: 0
