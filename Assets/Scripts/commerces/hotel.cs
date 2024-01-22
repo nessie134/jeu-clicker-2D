@@ -19,7 +19,7 @@ public class hotel : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 4f;
+        drainMultiplier = 4f;
         nbOfHotel++;
     }
 }

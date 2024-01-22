@@ -19,7 +19,7 @@ public class bar : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 2f;
+        drainMultiplier += 3f;
         nbOfBars++;
     }
 }

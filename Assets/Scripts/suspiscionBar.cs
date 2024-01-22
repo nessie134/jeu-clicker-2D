@@ -13,7 +13,7 @@ public class suspiscionBar : MonoBehaviour
     public static float susGenRate = 1f;
     public float susDrainRate = 1f;
 
-    public static float genMultiplier = 1f;
+    public static float genMultiplier;
     public static float drainMultiplier;
 
 
@@ -23,6 +23,7 @@ public class suspiscionBar : MonoBehaviour
 
     void Start()
     {
+        genMultiplier = 1f; drainMultiplier = 1f;
         
         susBar.value = minSus;
         StartCoroutine(generateSus());
@@ -35,11 +36,25 @@ public class suspiscionBar : MonoBehaviour
     void Update()
     {
         currentSus = susBar.value;
-        Debug.Log("current sus : " + currentSus);
-        Debug.Log("max sus : " + maxSus);
-        /*Debug.Log("Gen rate = " + susGenRate + "genMultiplier : " + genMultiplier);
-        Debug.Log("drain rate = " + drainMultiplier);
-        Debug.Log("Nombre de laveries : " + Laverie.nbOfLaveries);*/
+        if (genMultiplier == 0)
+        {
+            genMultiplier = 1;
+        }
+        else
+        {
+        genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
+                                        ciseaux.genMultiplier;
+
+        drainMultiplier = bar.drainMultiplier * bar.nbOfBars +
+                                        hotel.drainMultiplier * hotel.nbOfHotel +
+                                        fastfood.drainMultiplier * fastfood.nbOfFf +
+                                        casino.drainMultiplier * casino.nbOfCas;
+
+        Debug.Log("Multiplicateur de gen global = " + genMultiplier);
+        Debug.Log("Multiplicateur de drain global = " + genMultiplier);
+
+        }
+       
     }
 
     IEnumerator generateSus()

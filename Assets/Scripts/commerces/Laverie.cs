@@ -19,7 +19,7 @@ public class Laverie : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 1f;
+        suspiscionBar.drainMultiplier += 2f;
         nbOfLaveries++;
     }
 }
