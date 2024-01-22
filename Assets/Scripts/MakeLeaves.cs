@@ -10,7 +10,6 @@ public class MakeLeaves : MonoBehaviour
     public void ClickTheButton()
     {
         GlobalLeaves.leafCount += nbClicks;
-        Debug.Log("Feuilles totales : " + GlobalLeaves.leafCount);
         AudioManager.Instance.PlaySfx("clickLeaf", 1f);
     }
 }

@@ -17,7 +17,14 @@ public class GlobalLeaves : MonoBehaviour
 
     public void Update()
     {
-        _argent.text = "Argent " + leafCount + "$";
+        if (leafCount <= 1)
+        {
+            _argent.text = "Feuille " + leafCount;
+        }
+        else
+        {
+            _argent.text = "Feuilles " + leafCount;
+        }
     }
     
 }
