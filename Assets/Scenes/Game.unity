@@ -2770,7 +2770,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: HOTEL
+  m_text: hotel
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -3309,7 +3309,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: CASINO
+  m_text: casino
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -3881,10 +3881,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 982411181}
-  - {fileID: 966167708}
-  m_Father: {fileID: 1042781057}
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -4369,7 +4367,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 942194154}
   m_CullTransparentMesh: 1
-  m_text: ALIMENTATION
 --- !u!1 &969900655
 GameObject:
   m_ObjectHideFlags: 0
@@ -4601,7 +4598,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: FASTFOOD
+  m_text: fastfood
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -5303,7 +5300,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 124183bd7df8d454e8a87677ce8833c8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  businessName: 
+  businessName: hotel
   businessCost: 10000
 --- !u!1 &1076434873
 GameObject:
@@ -6727,7 +6724,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b113ee61cfa1ec5498f2b98a2ddf72f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  businessName: 
+  businessName: fast food
   businessCost: 500
 --- !u!1 &1327546327
 GameObject:
@@ -7698,7 +7695,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-s  m_text: BAR
+  m_text: bar
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -7761,7 +7758,7 @@ s  m_text: BAR
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: -313.2987, w: -4.1553097}
+  m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -7921,7 +7918,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 152fd6fb567293742bdb7b74ca27889d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  businessName: 
+  businessName: bar
   businessCost: 175
 --- !u!1 &1551694790
 GameObject:
@@ -9399,7 +9396,6 @@ RectTransform:
   m_LocalScale: {x: 2.6666667, y: 2.6666667, z: 2.6666667}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1309913601}
   - {fileID: 1115799229}
   - {fileID: 2050138789}
   m_Father: {fileID: 1892790736}
@@ -9787,7 +9783,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 819835709}
-  - {fileID: 1445673031}
   - {fileID: 1855156942}
   - {fileID: 1791026900}
   - {fileID: 1878991534}
@@ -11264,7 +11259,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 790ea164c48a0bc48aacc9b3c5a3275f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  businessName: 
+  businessName: casino
   businessCost: 50000
 --- !u!1 &2120584883
 GameObject:
@@ -11467,7 +11462,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1445673031}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -11580,3 +11575,5 @@ SceneRoots:
   - {fileID: 1617179769}
   - {fileID: 1873194552}
   - {fileID: 1149356026}
+  - {fileID: 861414181}
+  - {fileID: 2144146532}

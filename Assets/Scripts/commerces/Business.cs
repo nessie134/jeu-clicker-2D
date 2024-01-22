@@ -20,11 +20,14 @@ public class Business : MonoBehaviour
     }
     public void Update()
     {
-        if (PropreArgent.argent >= businessCost)
+        if (_isBought == false)
         {
-            _button.interactable = true;
+            if (PropreArgent.argent >= businessCost)
+            {
+                _button.interactable = true;
+            }
         }
-        else if (_isBought)
+        else
         {
             _button.interactable = false;
         }
