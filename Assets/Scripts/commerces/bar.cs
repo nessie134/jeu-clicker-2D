@@ -3,25 +3,23 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Rendering;
+using UnityEngine.UI;
 
-public class Laverie : Business
-{
+public class bar : Business
+{   
+    public static int nbOfBars;
     public static float drainMultiplier;
-    public static int nbOfLaveries;
-
-
-    public Laverie(string name, int cost) : base(name, cost)
+    
+    public bar(string name, int cost) : base(name, cost)
     {
-        name = "Laverie";
-        cost = 200;
+        name = "Bar";
+        cost = 175;
     }
 
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier = 4f;
-        nbOfLaveries += 1;
-
+        suspiscionBar.drainMultiplier = 2f;
+        nbOfBars++;
     }
 }
-

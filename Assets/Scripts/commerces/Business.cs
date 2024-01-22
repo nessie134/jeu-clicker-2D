@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public abstract class Business : MonoBehaviour
+public class Business : MonoBehaviour
 {
     private TextMeshProUGUI _prixTexte;
     public string businessName;
@@ -38,5 +38,8 @@ public abstract class Business : MonoBehaviour
         _prixTexte.text = "Acheter " + cost + "$";
     }
 
-    public abstract void BusinessAction();
+    public virtual void BusinessAction()
+    {
+        GlobalLeaves.leafCount -= businessCost;
+    }
 }
