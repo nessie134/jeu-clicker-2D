@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Argent Propre Adrien.unity
     guid: c6d4148945124664f95f41ab1243efd6
   - enabled: 1
+    path: Assets/Scenes/Menu.unity
+    guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 049ffd90b9fac254381b32dc2f87346a
   m_configObjects: {}
