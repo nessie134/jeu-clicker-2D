@@ -21,5 +21,6 @@ public class PropreArgent : MonoBehaviour
     public void cliquePropre()
     {
         argent += 1;
+        GlobalLeaves.leafCount -= 1;
     }
 }
