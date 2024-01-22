@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 41506688}
   - component: {fileID: 41506687}
   m_Layer: 5
-  m_Name: Bar
+  m_Name: BarHolder
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2850,7 +2850,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: HOTEL
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -3390,7 +3390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: CASINO
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -4328,7 +4328,7 @@ GameObject:
   - component: {fileID: 942194157}
   - component: {fileID: 942194156}
   m_Layer: 5
-  m_Name: "acheterEmploy\xE9s"
+  m_Name: buyText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4508,7 +4508,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: ALIMENTATION
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -4937,7 +4937,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: FASTFOOD
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -6753,7 +6753,7 @@ GameObject:
   - component: {fileID: 1238126950}
   - component: {fileID: 1238126949}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: descriptionText (TMP)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8204,7 +8204,7 @@ GameObject:
   - component: {fileID: 1500866117}
   - component: {fileID: 1500866116}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: upgradeName
   m_TagString: ciseaux
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8250,7 +8250,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: nom de l'amelioration
+  m_text: BAR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: 125cb55b44b24c4393181402bc6200e6, type: 2}
@@ -8340,7 +8340,7 @@ GameObject:
   - component: {fileID: 1537240337}
   - component: {fileID: 1537240336}
   m_Layer: 5
-  m_Name: FakeEmployeeButton
+  m_Name: buyButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

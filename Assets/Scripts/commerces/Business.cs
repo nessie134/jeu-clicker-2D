@@ -40,6 +40,7 @@ public class Business : MonoBehaviour
 
     public virtual void BusinessAction()
     {
+        _prixTexte.text = "Déjà acheté";
         GlobalLeaves.leafCount -= businessCost;
     }
 }
