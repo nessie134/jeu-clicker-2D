@@ -14,7 +14,7 @@ public class suspiscionBar : MonoBehaviour
     public GameObject ImgGameOver;
 
     [SerializeField] private float minSus = 0f;
-    [SerializeField] private float maxSus = 100f;
+    [SerializeField] private float maxSus = 300f;
     public static float susGenRate = 1f;
     public float susDrainRate = 1f;
 
@@ -42,18 +42,11 @@ public class suspiscionBar : MonoBehaviour
     void Update()
     {
         currentSus = susBar.value;
-        genText.text = "x" + genMultiplier;
-        if (genMultiplier == 0)
-        {
-            genMultiplier = 1;
-        }
-        else
-        {
-            genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
-                                        ciseaux.genMultiplier +
-                                        ferme.genMultiplier * ferme.nbFarm +
-                                        hangar.genMultiplier * hangar.nbHangar +
-                                        robots.genMultiplier * robots.nbRobots;
+        genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
+                        ciseaux.genMultiplier +
+                        ferme.genMultiplier * ferme.nbFarm +
+                        hangar.genMultiplier * hangar.nbHangar +
+                        robots.genMultiplier * robots.nbRobots;
 
             drainMultiplier = bar.drainMultiplier * bar.nbOfBars +
                                         hotel.drainMultiplier * hotel.nbOfHotel +
@@ -63,10 +56,17 @@ public class suspiscionBar : MonoBehaviour
 
             Debug.Log("Multiplicateur de gen global = " + genMultiplier);
             Debug.Log("Multiplicateur de drain global = " + genMultiplier);
-
+        float total = genMultiplier - drainMultiplier;
+        if(total < 0)
+        {
+            total = 0;
         }
-
-        if (susBar.value > maxSus)
+        genText.text = "x" + total.ToString("F2");
+        
+        
+        
+        
+            if (susBar.value > maxSus)
         {
             susBar.value = maxSus;
         }

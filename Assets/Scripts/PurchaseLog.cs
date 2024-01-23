@@ -10,7 +10,7 @@ public class PurchaseLog : MonoBehaviour
     {
         autoLeaf.SetActive(true);
         AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
-
+        
         GlobalLeaves.leafCount -= GlobalEmployee.employeeValue;//On retire le prix de l'employé au nombre de feuilles
         GlobalEmployee.employeeValue *= 2;//Chaque fois qu'on achète un employé, on double son prix
         GlobalEmployee.nbOfEmployees += 1;//On augmente le nombre d'employés

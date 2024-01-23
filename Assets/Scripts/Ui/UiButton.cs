@@ -7,6 +7,6 @@ public class UiButton : MonoBehaviour
 {
     public void StartGame()
     {
-        SceneManager.LoadScene("Game");
+        SceneManager.LoadScene("Game 1");
     }
 }
