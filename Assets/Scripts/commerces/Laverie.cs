@@ -21,6 +21,15 @@ public class Laverie : Business
         base.BusinessAction();
         suspiscionBar.drainMultiplier += 2f;
         nbOfLaveries++;
+        StartCoroutine(Farm());
+    }
+    IEnumerator Farm()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            PropreArgent.argent += 5;
+        }
     }
 }
 

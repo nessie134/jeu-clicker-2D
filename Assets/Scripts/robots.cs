@@ -20,16 +20,16 @@ public class robots : MonoBehaviour
         _robotsDesc = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prix = 100;
         _button = gameObject.GetComponent<Button>();
+        StartCoroutine(Farm());
     }
     
     public void achatRobots()
     {
         AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         GlobalLeaves.leafCount -= prix;
+        nbRobots += 10;
         prix += 200;
-        nbRobots++;
-        genMultiplier += 0.4f;
-        StartCoroutine(Farm());
+        genMultiplier += 0.3f;
     }
     void Update()
     {
@@ -41,7 +41,7 @@ public class robots : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            GlobalLeaves.leafCount += 10 * nbRobots;
+            GlobalLeaves.leafCount += nbRobots;
         }
     }
 }

@@ -6,13 +6,9 @@ public class PropreArgent : MonoBehaviour
 {
     
     public static int argent;
-    private TextMeshProUGUI _argent;
+   [SerializeField] private TextMeshProUGUI _argent;
     // Start is called before the first frame update
-    void Start()
-    {
-        _argent = gameObject.GetComponentInChildren<TextMeshProUGUI>();
-    }
-
+    
     void Update()
     {
         _argent.text = "Argent " + argent + "$";

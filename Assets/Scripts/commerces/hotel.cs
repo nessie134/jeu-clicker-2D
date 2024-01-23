@@ -21,5 +21,14 @@ public class hotel : Business
         base.BusinessAction();
         drainMultiplier = 4f;
         nbOfHotel++;
+        StartCoroutine(Farm());
+    }
+    IEnumerator Farm()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            PropreArgent.argent += 5000;
+        }
     }
 }

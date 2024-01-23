@@ -21,6 +21,7 @@ public class casino : Business
     {
         base.BusinessAction();
         drainMultiplier = 5f;
-        nbOfCas++;
+        nbOfCas++; 
     }
+   
 }

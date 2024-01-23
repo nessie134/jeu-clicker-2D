@@ -19,7 +19,7 @@ public class ciseaux : MonoBehaviour
 
     private MakeLeaves _makeLeaves;
     private TextMeshProUGUI _prixTexte;
-    private int _prix = 10;
+    private int _prix = 30;
     private Button _button;
     [SerializeField] private TextMeshProUGUI _description;
 
@@ -71,7 +71,7 @@ public class ciseaux : MonoBehaviour
         {
             case CiseauxLevel.Fer:
                 _makeLeaves.nbClicks = 2;
-                _prix = 20;
+                _prix = 100;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en or";
                 genMultiplier = 1.2f;
@@ -79,7 +79,7 @@ public class ciseaux : MonoBehaviour
 
             case CiseauxLevel.Or:
                 _makeLeaves.nbClicks = 10;
-                _prix = 30;
+                _prix = 500;
                 _prixTexte.text = "Acheter " + _prix + "$";
                 _description.text = "Ciseaux en diamant";
                 genMultiplier = 1.5f + 1.2f;

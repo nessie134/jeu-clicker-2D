@@ -20,16 +20,16 @@ public class hangar : MonoBehaviour
         _hangarDesc = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prix = 100000;
         _button = gameObject.GetComponent<Button>();
+        StartCoroutine(Farm());
     }
     
     public void achatHangar()
     {
         AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         GlobalLeaves.leafCount -= prix;
-        nbHangar++;
-        prix += 500000 * nbHangar;
+        nbHangar += 10000;
+        prix += 50000;
         genMultiplier += 3f;
-        StartCoroutine(Farm());
     }
     void Update()
     {
@@ -41,7 +41,7 @@ public class hangar : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            GlobalLeaves.leafCount += 50000 * nbHangar;
+            GlobalLeaves.leafCount += nbHangar;
         }
     }
 }

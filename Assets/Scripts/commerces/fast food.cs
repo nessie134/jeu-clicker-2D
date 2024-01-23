@@ -21,5 +21,14 @@ public class fastfood : Business
         base.BusinessAction();
         drainMultiplier = 3f;
         nbOfFf++;
+        StartCoroutine(Farm());
+    }
+    IEnumerator Farm()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(1f);
+            PropreArgent.argent += 200;
+        }
     }
 }

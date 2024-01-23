@@ -20,16 +20,16 @@ public class ferme : MonoBehaviour
         _farmDesc = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         prix = 20000;
         _button = gameObject.GetComponent<Button>();
+        StartCoroutine(Farm());
     }
     
     public void achatFerme()
     {
         AudioManager.Instance.PlaySfx("clickUpgrade", 1f);
         GlobalLeaves.leafCount -= prix;
-        nbFarm++;
-        prix += 10000 * nbFarm;
-        genMultiplier += 0.7f;
-        StartCoroutine(Farm());
+        nbFarm += 1000;
+        prix += 10000;
+        genMultiplier += 0.4f;
     }
     void Update()
     {
@@ -41,7 +41,7 @@ public class ferme : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            GlobalLeaves.leafCount += 1000 * nbFarm;
+            GlobalLeaves.leafCount += nbFarm;
         }
     }
 }

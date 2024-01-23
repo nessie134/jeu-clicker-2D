@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class PurchaseLog : MonoBehaviour
 {
-    public GameObject autoLeaf;//on créer un gameObject solo sur lequel on met le script de l'auto leaf car on doit l'activer(désactivé au début du jeu)
+    public GameObject autoLeaf;
+    [SerializeField] private TextMeshProUGUI _nbOfEmployees; 
     public void StartAutoLeaf()//à mettre sur le bouton
     {
         autoLeaf.SetActive(true);
@@ -26,8 +27,6 @@ public class PurchaseLog : MonoBehaviour
 
     public void Update()
     {
-        /*Debug.Log("nombre d'employés : " + GlobalEmployee.nbOfEmployees);
-        Debug.Log("nombre de feuilles des employés : " + GlobalEmployee.employeeLeavesPerSec);*/
-        
+        _nbOfEmployees.text = "Employés : " + GlobalEmployee.nbOfEmployees;
     }
 }

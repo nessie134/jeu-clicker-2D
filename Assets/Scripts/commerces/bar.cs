@@ -28,7 +28,7 @@ public class bar : Business
         while (true)
         {
             yield return new WaitForSeconds(1f);
-            PropreArgent.argent += 10;
+            PropreArgent.argent += 50;
         }
     }
 }

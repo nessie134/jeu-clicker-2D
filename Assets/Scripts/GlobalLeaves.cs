@@ -19,11 +19,11 @@ public class GlobalLeaves : MonoBehaviour
     {
         if (leafCount <= 1)
         {
-            _argent.text = "Feuille " + leafCount;
+            _argent.text = "Feuille : " + leafCount;
         }
         else
         {
-            _argent.text = "Feuilles " + leafCount;
+            _argent.text = "Feuilles : " + leafCount;
         }
     }
     
