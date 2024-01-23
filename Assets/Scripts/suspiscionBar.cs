@@ -2,11 +2,14 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class suspiscionBar : MonoBehaviour
 {
     public Slider susBar;
+    
+    public GameObject ImgGameOver;
 
     [SerializeField] private float minSus = 0f;
     [SerializeField] private float maxSus = 100f;
@@ -28,8 +31,6 @@ public class suspiscionBar : MonoBehaviour
         susBar.value = minSus;
         StartCoroutine(generateSus());
         StartCoroutine(drainSus());
-        //saveBar();
-        loadBar();
     }
 
     // Update is called once per frame
@@ -74,10 +75,12 @@ public class suspiscionBar : MonoBehaviour
             if (susBar.value >= maxSus)
             {
                 
+                
                 Debug.Log("GAME OVER: Suspicion maximale atteinte!" + susBar.value);
                 AudioManager.Instance.musicSource.Stop();
                 AudioManager.Instance.PlaySfx("game over", 0.5f);
-                Time.timeScale = 0f; // Pause the game
+                GameOver();
+                
 
             }
         }
@@ -98,23 +101,25 @@ public class suspiscionBar : MonoBehaviour
             // Vérifier si la suspicion atteint le maximum
             if (susBar.value <= minSus)
             {
-                Debug.Log("Game Over: Suspicion minimale atteinte!");
+                Debug.Log("Suspicion minimale atteinte!");
 
             }
         }
     }
 
-
-    public void saveBar()
+    IEnumerator LoadMenu()
     {
-        PlayerPrefs.SetFloat("susBar", susBar.value);
-        PlayerPrefs.Save();
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene("Menu");
     }
 
-    public void loadBar()
+    public void GameOver() //On va récup cette méthode dans le script CountDown
     {
-        susBar.value = PlayerPrefs.GetFloat("susBar");
+        ImgGameOver.SetActive(true);//Désactivé dans l'éditeur!
+        StartCoroutine(LoadMenu());
     }
+
+   
 
 
 }

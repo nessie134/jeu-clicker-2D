@@ -178,11 +178,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   susBar: {fileID: 4324017744186596938}
+  ImgGameOver: {fileID: 84083999319395694, guid: c5390958d8f53fb49853b73aa18bea0e, type: 3}
   minSus: 0
   maxSus: 5
-  susGenRate: 1
   susDrainRate: 1
-  currentSus: 0
 --- !u!1 &7487807287324538483
 GameObject:
   m_ObjectHideFlags: 0
