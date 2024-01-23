@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+
 
 public class suspiscionBar : MonoBehaviour
 {
@@ -19,6 +21,8 @@ public class suspiscionBar : MonoBehaviour
     public static float genMultiplier;
     public static float drainMultiplier;
 
+    private TextMeshProUGUI genText;
+
 
     private float currentSus;
 
@@ -26,7 +30,8 @@ public class suspiscionBar : MonoBehaviour
 
     void Start()
     {
-        genMultiplier = 1f; drainMultiplier = 1f;
+        genText = GetComponentInChildren<TextMeshProUGUI>();
+        genMultiplier = 1f; drainMultiplier = 0f;
         
         susBar.value = minSus;
         StartCoroutine(generateSus());
@@ -37,6 +42,7 @@ public class suspiscionBar : MonoBehaviour
     void Update()
     {
         currentSus = susBar.value;
+        genText.text = "x" + genMultiplier;
         if (genMultiplier == 0)
         {
             genMultiplier = 1;
@@ -102,7 +108,7 @@ public class suspiscionBar : MonoBehaviour
         {
             yield return new WaitForSeconds(1f);
             // Vérifier si le joueur a suffisamment de feuilles pour augmenter la suspicion
-            if (GlobalLeaves.leafCount >= 10)
+            if (GlobalLeaves.leafCount >= 1)
             {
                 // Augmenter la barre de suspicion
                 susBar.value -= susGenRate * drainMultiplier;
