@@ -19,7 +19,7 @@ public class Laverie : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        suspiscionBar.drainMultiplier += 2f;
+        drainMultiplier += 2f;
         nbOfLaveries++;
         StartCoroutine(Farm());
     }

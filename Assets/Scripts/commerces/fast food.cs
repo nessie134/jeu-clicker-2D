@@ -19,7 +19,7 @@ public class fastfood : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        drainMultiplier = 3f;
+        drainMultiplier = 4f;
         nbOfFf++;
         StartCoroutine(Farm());
     }

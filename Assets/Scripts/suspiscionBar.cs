@@ -44,18 +44,28 @@ public class suspiscionBar : MonoBehaviour
         else
         {
             genMultiplier = GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees +
-                                        ciseaux.genMultiplier;
+                                        ciseaux.genMultiplier +
+                                        ferme.genMultiplier * ferme.nbFarm +
+                                        hangar.genMultiplier * hangar.nbHangar +
+                                        robots.genMultiplier * robots.nbRobots;
 
             drainMultiplier = bar.drainMultiplier * bar.nbOfBars +
                                         hotel.drainMultiplier * hotel.nbOfHotel +
                                         fastfood.drainMultiplier * fastfood.nbOfFf +
-                                        casino.drainMultiplier * casino.nbOfCas;
+                                        casino.drainMultiplier * casino.nbOfCas +
+                                        Laverie.drainMultiplier * Laverie.nbOfLaveries;
 
             Debug.Log("Multiplicateur de gen global = " + genMultiplier);
             Debug.Log("Multiplicateur de drain global = " + genMultiplier);
 
         }
-       
+
+        if (susBar.value > maxSus)
+        {
+            susBar.value = maxSus;
+        }
+
+
     }
 
     IEnumerator generateSus()
@@ -72,7 +82,7 @@ public class suspiscionBar : MonoBehaviour
                 // Vérifier si la suspicion atteint le maximum
 
             }
-            if (susBar.value >= maxSus)
+            if (susBar.value == maxSus)
             {
                 
                 
@@ -111,6 +121,7 @@ public class suspiscionBar : MonoBehaviour
     {
         yield return new WaitForSeconds(4f);
         SceneManager.LoadScene("Menu");
+        AudioManager.Instance.sfxSource.Stop();
     }
 
     public void GameOver() //On va récup cette méthode dans le script CountDown

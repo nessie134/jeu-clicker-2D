@@ -17,12 +17,6 @@ public class PurchaseLog : MonoBehaviour
         GlobalEmployee.turnOffButton = true;//On désactive le bouton pour éviter de spam l'achat alors qu'on a pas assez de feuilles
 
         GlobalEmployee.employeeLeavesPerSec += 1;
-        //suspiscionBar.genMultiplier += GlobalEmployee.genMultiplier * GlobalEmployee.nbOfEmployees;
-        /*suspiscionBar.drainMultiplier = Laverie.drainMultiplier * Laverie.nbOfLaveries +
-                                        bar.drainMultiplier * bar.nbOfBars + 
-                                        hotel.drainMultiplier * hotel.nbOfHotel +
-                                        fastfood.drainMultiplier * fastfood.nbOfFf +
-                                        casino.drainMultiplier * casino.nbOfCas;*/
     }
 
     public void Update()

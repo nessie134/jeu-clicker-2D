@@ -11,7 +11,7 @@ public class hangar : MonoBehaviour
     private int prix;
     private Button _button;
     public static int nbHangar;
-    public static float genMultiplier = 10f;
+    public static float genMultiplier = 0.5f;
     
     
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class hangar : MonoBehaviour
         GlobalLeaves.leafCount -= prix;
         nbHangar += 10000;
         prix += 50000;
-        genMultiplier += 3f;
+        genMultiplier += 0.1f;
     }
     void Update()
     {

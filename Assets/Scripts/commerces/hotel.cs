@@ -19,7 +19,7 @@ public class hotel : Business
     public override void BusinessAction()
     {
         base.BusinessAction();
-        drainMultiplier = 4f;
+        drainMultiplier = 6f;
         nbOfHotel++;
         StartCoroutine(Farm());
     }

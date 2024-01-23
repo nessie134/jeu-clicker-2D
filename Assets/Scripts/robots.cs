@@ -11,7 +11,7 @@ public class robots : MonoBehaviour
     private int prix;
     private Button _button;
     public static int nbRobots;
-    public static float genMultiplier = 2f;
+    public static float genMultiplier = 0.3f;
     
     
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class robots : MonoBehaviour
         GlobalLeaves.leafCount -= prix;
         nbRobots += 10;
         prix += 200;
-        genMultiplier += 0.3f;
+        genMultiplier += 0.1f;
     }
     void Update()
     {

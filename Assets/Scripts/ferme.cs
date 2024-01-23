@@ -11,7 +11,7 @@ public class ferme : MonoBehaviour
     private int prix;
     private Button _button;
     public static int nbFarm;
-    public static float genMultiplier = 3f;
+    public static float genMultiplier = 0.6f;
     
     
     // Start is called before the first frame update
@@ -29,7 +29,7 @@ public class ferme : MonoBehaviour
         GlobalLeaves.leafCount -= prix;
         nbFarm += 1000;
         prix += 10000;
-        genMultiplier += 0.4f;
+        genMultiplier += 0.2f;
     }
     void Update()
     {
