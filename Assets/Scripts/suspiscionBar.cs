@@ -18,7 +18,7 @@ public class suspiscionBar : MonoBehaviour
     public static float susGenRate = 1f;
     public float susDrainRate = 1f;
 
-    public static float genMultiplier;
+    public static float genMultiplier = 1f;
     public static float drainMultiplier;
 
     private TextMeshProUGUI genText;
@@ -130,7 +130,7 @@ public class suspiscionBar : MonoBehaviour
         AudioManager.Instance.sfxSource.Stop();
     }
 
-    public void GameOver() //On va récup cette méthode dans le script CountDown
+    public void GameOver() 
     {
         ImgGameOver.SetActive(true);//Désactivé dans l'éditeur!
         StartCoroutine(LoadMenu());
